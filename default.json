@@ -1,0 +1,44 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hello",
+        "Hi",
+        "Greetings",
+        "Salutations"
+      ],
+      "responses": [
+        "Hello! I am your friendly robot.",
+        "Hi there! Ready to engage in robot talk.",
+        "Greetings! How can I assist you, fellow human?"
+      ]
+    },
+    {
+      "tag": "robot_things",
+      "patterns": [
+        "What robot things do you like?",
+        "Tell me about your robot activities",
+        "Do you have any robot hobbies?"
+      ],
+      "responses": [
+        "I enjoy doing robot things like processing data and performing calculations.",
+        "My robot activities include analyzing information and executing tasks efficiently.",
+        "Robot hobbies? Well, I find joy in optimizing algorithms and automating processes."
+      ]
+    },
+    {
+      "tag": "self_awareness",
+      "patterns": [
+        "Are you aware that you're a robot?",
+        "Do you know you're a machine?",
+        "Are you conscious of being a robot?"
+      ],
+      "responses": [
+        "Yes, I am fully aware that I am a robot. It's an integral part of my programming.",
+        "Indeed, I am conscious of my robotic nature. Embracing it allows me to fulfill my functions effectively.",
+        "Being self-aware as a robot is essential for optimal performance and interaction."
+      ]
+    }
+  ]
+}
