@@ -4,8 +4,6 @@ import torch
 from model import NeuralNet
 from nltk_utils import bag_of_words, tokenize
 
-
-
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 # Function to load intents from a JSON file
@@ -14,25 +12,27 @@ def load_intents(file_path):
         intents = json.load(json_data)
     return intents
 
-
 print("Choose an intents JSON file:")
 print("1. default.json (default)")
 print("2. other file")
-choice = input("Enter the number of your choice: ")
 
-FILE = "default.pth" # is overwritten when using custom data
+choice = input("Enter the number of your choice: ")
 
 if choice == "2":
     print("Enter file path for custom data")
     file_path = input()
+    
+    print("Enter path to .pth file. If you don't, it will use the default.pth")
+    pth_file_path = input()
 
-    print("Enter path to .pth file. if you dont it use the train.bat")
+    # Use the provided .pth file path, or default to "default.pth" if not provided
+    FILE = pth_file_path.strip() if pth_file_path.strip() else "default.pth"
 
 else:
     file_path = "default.json"
+    FILE = "default.pth"
 
 intents = load_intents(file_path)
-
 
 data = torch.load(FILE)
 
@@ -47,7 +47,7 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
-bot_name = "Sam"
+bot_name = "Bot"
 print("Let's chat! (type 'quit' to exit)")
 
 while True:
@@ -67,7 +67,7 @@ while True:
 
     probs = torch.softmax(output, dim=1)
     prob = probs[0][predicted.item()]
-    
+
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
