@@ -126,7 +126,7 @@ data = {
 }
 
 
-FILE = f"custom_training_data_{random.randint(13284,1238904375456532)}"
+FILE = f"custom_training_data_{random.randint(13284,1238904375456532)}.pth"
 torch.save(data, FILE)
 
 print(f'training complete. file saved to {FILE}')
