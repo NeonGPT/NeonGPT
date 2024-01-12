@@ -1,10 +1,10 @@
-# girlfriendGPT
-code for girlfriendGPT
+# NeonGPT
+code for NeonGPT
 
 
 # Documentation
-[Developer Documentation](https://github.com/girlfriendGPT/dev-docks/)<br>
-[User Documentation](https://github.com/girlfriendGPT/user-docks)
+[Developer Documentation](https://github.com/NeonGPT/dev-docks/)<br>
+[User Documentation](https://github.com/NeonGPT/user-docks)
 
 
 
